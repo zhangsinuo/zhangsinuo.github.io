@@ -9,7 +9,7 @@ htmlwidgets: true
 
 # Anonymize when submitting
 authors:
-   - name: Anonymous
+   - name: An
 
 #authors:
 #  - name: Albert Einstein
