@@ -103,6 +103,12 @@ Please avoid using the direct markdown method of embedding images; they may not 
 Some more complex ways to load images (note the different styles of the shapes/shadows):
 
 <div class="row mt-3">
+  {% include figure.html path="assets/img/2024-05-07-dictionary-llm/1.png" class="img-fluid" %}
+</div>
+<div class="caption">
+    A comparison of the attention patterns in three mainstream architectures. Here, the yellow, green, blue, and grey rectangles indicate the encoder-encoder attention, encoder-decoder attention, decoder-decoder attention, and masked attention, respectively.
+</div>
+<div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.html path="assets/img/2024-05-07-distill-example/9.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
