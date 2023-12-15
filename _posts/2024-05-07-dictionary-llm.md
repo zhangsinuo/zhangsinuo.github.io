@@ -36,7 +36,7 @@ bibliography: 2024-05-07-distill-example.bib
 toc:
   - name: Introduction
   - name: Pre-training Technologies
-  - name: 333
+  - name: ooo
     subsections:
     - name: Interactive Figures
   - name: Fine-tuning Methods
