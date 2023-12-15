@@ -68,6 +68,14 @@ _styles: >
 
 Note: please use the table of contents as defined in the front matter rather than the traditional markdown styling.
 
+## Introduction
+
+A large language model (LLM) is a type of language model notable for its ability to achieve general-purpose language understanding and generation with billions of parameters that require significant computational resources and vast data for training. These artificial neural networks, mainly transformers, are pre-trained using self-supervised and semi-supervised learning techniques. The boom in the field of LLM has attracted many researchers and practitioners to devote themselves to related research. Notable examples include OpenAI's GPT models (e.g., GPT-3.5 and GPT-4, used in ChatGPT), Google's PaLM (used in Bard), and Meta's LLaMa, as well as BLOOM, Ernie 3.0 Titan, and Anthropic's Claude 2, thus promoting the advancement of technology in this field. 
+
+As technology advances rapidly, many technical terms have emerged, some of which may not be easily understood. For example, 'in-context learning' refers to the model's ability to understand and respond based on the provided context, while 'instruction tuning' involves refining the model to respond to specific instructions more effectively. This proliferation of terms can make it challenging for researchers and users of LLMs to stay abreast of the latest advancements, creating unfavorable conditions for developing LLM technology. Therefore, sorting out and summarizing these proprietary terms has become an urgent demand for the LLM technology research community. To address this issue, this blog has launched "Dictionary LLM", which aims to organize and explain the existing terminologies of LLMs and provides a convenient reference for related researchers so that they can quickly understand the basic concepts of LLMs and then deeply catch the technology related to large models. This blog and the 'Dictionary LLM' are particularly useful for researchers, practitioners, and anyone interested in the field of LLMs, offering a comprehensive resource for both newcomers and experienced professionals.
+
+In the following parts, Section 2 will explore pre-training technologies, detailing the training datasets used, the architectural nuances of various models, and the principles of model alignment with human values and expectations. Section 3 will delve into the nuances of fine-tuning methods, focusing on the art and science of prompt engineering and its impact on model performance. Finally, Section 4 will discuss the varied applications and challenges in LLM research, addressing critical issues like model-generated hallucinations and their implications.
+
 ## Equations
 
 This theme supports rendering beautiful math in inline and display modes using [MathJax 3](https://www.mathjax.org/) engine.
