@@ -36,6 +36,7 @@ bibliography: 2024-05-07-distill-example.bib
 toc:
   - name: Introduction
   - name: Pre-training Technologies
+  - name: 333
     subsections:
     - name: Interactive Figures
   - name: Fine-tuning Methods
@@ -75,6 +76,11 @@ A large language model (LLM) is a type of language model notable for its ability
 As technology advances rapidly, many technical terms have emerged, some of which may not be easily understood. For example, 'in-context learning' refers to the model's ability to understand and respond based on the provided context, while 'instruction tuning' involves refining the model to respond to specific instructions more effectively. This proliferation of terms can make it challenging for researchers and users of LLMs to stay abreast of the latest advancements, creating unfavorable conditions for developing LLM technology. Therefore, sorting out and summarizing these proprietary terms has become an urgent demand for the LLM technology research community. To address this issue, this blog has launched "Dictionary LLM", which aims to organize and explain the existing terminologies of LLMs and provides a convenient reference for related researchers so that they can quickly understand the basic concepts of LLMs and then deeply catch the technology related to large models. This blog and the 'Dictionary LLM' are particularly useful for researchers, practitioners, and anyone interested in the field of LLMs, offering a comprehensive resource for both newcomers and experienced professionals.
 
 In the following parts, Section 2 will explore pre-training technologies, detailing the training datasets used, the architectural nuances of various models, and the principles of model alignment with human values and expectations. Section 3 will delve into the nuances of fine-tuning methods, focusing on the art and science of prompt engineering and its impact on model performance. Finally, Section 4 will discuss the varied applications and challenges in LLM research, addressing critical issues like model-generated hallucinations and their implications.
+
+## Pre-training Technologies
+
+Pre-training is the first stage in the training process of machine learning models. It involves training the model on a large dataset to learn general features or representations of the data. These general features often include linguistic structures, syntax, common phrases, and contextual relationships, which form the foundational understanding of the model. Once pre-training is complete, fine-tuning follows, where the model is further trained on a smaller, task-specific dataset to specialize it for particular tasks. The pre-training phase helps the model leverage knowledge from a vast amount of data, making it more proficient in handling specific tasks with less data during the fine-tuning phase. This large dataset usually comprises diverse text sources, ranging from books and articles to websites, encompassing a wide array of topics and styles. This approach is commonly used in training large language models and deep learning models. Here, we briefly introduce three typical pre-training architectures for LLMs and an important technology, alignment.
+
 
 ## Equations
 
