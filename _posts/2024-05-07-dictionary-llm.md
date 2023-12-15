@@ -82,24 +82,6 @@ In the following parts, Section 2 will explore pre-training technologies, detail
 Pre-training is the first stage in the training process of machine learning models. It involves training the model on a large dataset to learn general features or representations of the data. These general features often include linguistic structures, syntax, common phrases, and contextual relationships, which form the foundational understanding of the model. Once pre-training is complete, fine-tuning follows, where the model is further trained on a smaller, task-specific dataset to specialize it for particular tasks. The pre-training phase helps the model leverage knowledge from a vast amount of data, making it more proficient in handling specific tasks with less data during the fine-tuning phase. This large dataset usually comprises diverse text sources, ranging from books and articles to websites, encompassing a wide array of topics and styles. This approach is commonly used in training large language models and deep learning models. Here, we briefly introduce three typical pre-training architectures for LLMs and an important technology, alignment.
 
 
-## Equations
-
-This theme supports rendering beautiful math in inline and display modes using [MathJax 3](https://www.mathjax.org/) engine.
-You just need to surround your math expression with `$$`, like `$$ E = mc^2 $$`.
-If you leave it inside a paragraph, it will produce an inline expression, just like $$ E = mc^2 $$.
-
-To use display mode, again surround your expression with `$$` and place it as a separate paragraph.
-Here is an example:
-
-$$
-\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
-$$
-
-Note that MathJax 3 is [a major re-write of MathJax](https://docs.mathjax.org/en/latest/upgrading/whats-new-3.0.html) 
-that brought a significant improvement to the loading and rendering speed, which is now 
-[on par with KaTeX](http://www.intmath.com/cg5/katex-mathjax-comparison.php).
-
-
 ## Images and Figures
 
 Its generally a better idea to avoid linking to images hosted elsewhere - links can break and you
@@ -112,7 +94,7 @@ To include images in your submission in this way, you must do something like the
 
 which results in the following image:
 
-{% include figure.html path="assets/img/2024-05-07-distill-example/iclr.png" class="img-fluid" %}
+{% include figure.html path="assets/img/2024-05-07-dictionary-llm/1.png" class="img-fluid" %}
 
 To ensure that there are no namespace conflicts, you must save your asset to your unique directory
 `/assets/img/2024-05-07-[SUBMISSION NAME]` within your submission.
