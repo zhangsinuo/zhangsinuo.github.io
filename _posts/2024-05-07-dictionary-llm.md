@@ -81,6 +81,12 @@ In the following parts, Section 2 will explore pre-training technologies, detail
 
 Pre-training is the first stage in the training process of machine learning models. It involves training the model on a large dataset to learn general features or representations of the data. These general features often include linguistic structures, syntax, common phrases, and contextual relationships, which form the foundational understanding of the model. Once pre-training is complete, fine-tuning follows, where the model is further trained on a smaller, task-specific dataset to specialize it for particular tasks. The pre-training phase helps the model leverage knowledge from a vast amount of data, making it more proficient in handling specific tasks with less data during the fine-tuning phase. This large dataset usually comprises diverse text sources, ranging from books and articles to websites, encompassing a wide array of topics and styles. This approach is commonly used in training large language models and deep learning models. Here, we briefly introduce three typical pre-training architectures for LLMs and an important technology, alignment.
 
+<div class="row mt-3">
+  {% include figure.html path="assets/img/2024-05-07-dictionary-llm/1.png" class="img-fluid" %}
+</div>
+<div class="caption", style="text-align: left;">
+    A comparison of the attention patterns in three mainstream architectures. Here, the yellow, green, blue, and grey rectangles indicate the encoder-encoder attention, encoder-decoder attention, decoder-decoder attention, and masked attention, respectively.
+</div>
 
 ## Images and Figures
 
@@ -105,7 +111,7 @@ Some more complex ways to load images (note the different styles of the shapes/s
 <div class="row mt-3">
   {% include figure.html path="assets/img/2024-05-07-dictionary-llm/1.png" class="img-fluid" %}
 </div>
-<div class="caption">
+<div class="caption", style="text-align: left;">
     A comparison of the attention patterns in three mainstream architectures. Here, the yellow, green, blue, and grey rectangles indicate the encoder-encoder attention, encoder-decoder attention, decoder-decoder attention, and masked attention, respectively.
 </div>
 <div class="row mt-3">
