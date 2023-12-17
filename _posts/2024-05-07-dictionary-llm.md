@@ -172,12 +172,12 @@ This architecture is useful in handling sequences of varying lengths and is cruc
 
 2. Challenges and Costs:
    * Data Curation: Extensive effort to curate a diverse and unbiased dataset representing a wide range of demographics.
-   - Algorithm Development: Creating complex algorithms capable of making fair, unbiased decisions and adhering to ethical norms.
-   + Ongoing Monitoring: Continuous evaluation to maintain alignment, involving regular updates and checks.
+   * Algorithm Development: Creating complex algorithms capable of making fair, unbiased decisions and adhering to ethical norms.
+   * Ongoing Monitoring: Continuous evaluation to maintain alignment, involving regular updates and checks.
 
 3. Performance Trade-offs:
    * Processing Time: Slower decision-making due to the complexity of ethical algorithms.
-   - Accuracy: Potentially lower accuracy in specific contexts to avoid ethical risks, like discriminating against certain groups.
+   * Accuracy: Potentially lower accuracy in specific contexts to avoid ethical risks, like discriminating against certain groups.
 
 4. Outcome: The AI recruitment tool successfully facilitates fair and diverse hiring practices. Despite slower processing and potential accuracy trade-offs, the tool gains trust and acceptance due to its ethical and fair decision-making process.
 
@@ -195,9 +195,9 @@ Supervised fine-tuning is a process that involves further training a pre-trained
 1. Objective: To adapt a general language model for use in medical diagnosis, enabling it to understand and respond accurately to medical queries.
 
 2. Process:
-   * Pre-Trained Model: Start with a language model pre-trained on a vast corpus of general text.
-   * Fine-Tuning Dataset: Utilize a dataset of medical conversations and diagnoses, accurately labeled by medical professionals.
-   * Training: The model is fine-tuned with this medical dataset, learning to adjust its responses to fit the medical context accurately.
+   - Pre-Trained Model: Start with a language model pre-trained on a vast corpus of general text.
+   - Fine-Tuning Dataset: Utilize a dataset of medical conversations and diagnoses, accurately labeled by medical professionals.
+   - Training: The model is fine-tuned with this medical dataset, learning to adjust its responses to fit the medical context accurately.
 
 4. Application: The fine-tuned model is employed in a medical chatbot, assisting doctors by providing preliminary diagnoses based on patient symptoms described in natural language.
 
