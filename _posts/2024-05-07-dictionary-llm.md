@@ -10,9 +10,9 @@ htmlwidgets: true
 
 # Anonymize when submitting
 authors:
-   - name: An
+   - name: Anonymous
 
-#authors:
+# authors:
 #  - name: Albert Einstein
 #    url: "https://en.wikipedia.org/wiki/Albert_Einstein"
 #    affiliations:
