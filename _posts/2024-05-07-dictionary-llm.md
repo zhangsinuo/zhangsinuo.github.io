@@ -213,15 +213,205 @@ Supervised fine-tuning is a process that involves further training a pre-trained
 1. Objective: To train a chatbot for effective and empathetic customer service interactions.
 
 2. Process:
-   - Initial Model: Begin with a pre-trained language model capable of basic conversational responses.
-   - Human Feedback: Introduce human feedback by having language experts review and rate the chatbot's responses in simulated customer service scenarios.
-   - Training Loop: Use the feedback to adjust the model's parameters, encouraging it to generate responses that align more closely with the desired quality of customer service communication.
+ - Initial Model: Begin with a pre-trained language model capable of basic conversational responses.
+ - Human Feedback: Introduce human feedback by having language experts review and rate the chatbot's responses in simulated customer service scenarios.
+ - Training Loop: Use the feedback to adjust the model's parameters, encouraging it to generate responses that align more closely with the desired quality of customer service communication.
 
 4. Application: Deploy the chatbot in a real-world customer service environment, handling inquiries and providing assistance.
 
 5. Outcome: The chatbot, trained with RLHF, shows improved ability to handle customer queries with appropriate, empathetic, and effective responses, leading to higher customer satisfaction.
 
 **Related Works:** More information can be seen in Christiano et al. [2017] \cite{christiano2017deep}.
+
+### Instruction Tuning
+**Defnition:** Instruction tuning is an approach to fine-tune pre-trained LLMs using a collection of formatted instances (called instruction) in natural language. It is similar to supervised fine-tuning and multi-task prompted training. To perform instruction tuning, we must first collect or create instruction-formatted instances. These instances are then used to fine-tune LLMs in a supervised learning manner, for example, by training with the sequence-to-sequence loss. After instruction tuning, LLMs can demonstrate superior abilities to generalize to unseen tasks, even in multilingual settings. Instruction tuning is extensively researched and is a common feature in existing language models such as InstructGPT and GPT-4.
+
+**Case Study:** Enhancing a Language Model for Multilingual Task Handling
+
+1. Objective: To improve a language model's capability in handling a variety of tasks across multiple languages.
+
+2. Process:
+ - Collection of Instructions: Gather a diverse set of instruction-formatted instances in various languages, covering different tasks such as translation, summarization, and question-answering.
+ - Fine-Tuning: Use these instances to fine-tune the LLM in a supervised manner, employing a sequence-to-sequence loss function to guide the learning process.
+
+4. Application: The fine-tuned model is employed in a multilingual virtual assistant capable of understanding and executing a wide range of user instructions in different languages.
+
+5. Outcome: Post instruction tuning, the LLM shows enhanced performance in accurately interpreting and executing diverse tasks in multiple languages, demonstrating improved generalization abilities.
+
+**Related Works:** More information can be seen in Lou et al. [2023] \cite{lou2023prompt}.
+
+### Adapter Tuning
+**Defnition:** Adapter tuning incorporates small neural network modules (called adapter) into the Transformer models. A bottleneck architecture is used to implement the adapter module. The architecture compresses the original feature vector into a smaller dimension, followed by a nonlinear transformation, and then recovers it to the original dimension. The adapter modules are integrated into each Transformer layer, usually inserted serially after each of a Transformer layer's two core parts (i.e., attention layer and feed-forward layer). This technique is an alternative to fine-tuning and involves updating only the parameters of the adapter modules while learning on a downstream task. It allows for a lighter-weight adaptation of the pre-trained model to the new task.
+
+**Case Study:** Enhancing a Language Model for Multilingual Task Handling
+
+1. Objective: To adapt a pre-trained Transformer-based language model for a specific language pair translation task, say English to Japanese.
+
+2. Process: 
+
+\item Adapter Integration: Small adapter modules are inserted into each Transformer layer of the pre-trained model. These adapters have a bottleneck architecture, compressing and then expanding the feature vectors.
+\item Training: Only the adapter modules are trained on a dataset of English-Japanese sentence pairs. The rest of the model's parameters remain frozen.
+
+3. Application: The adapted model is used in a translation service to provide accurate and contextually relevant English-to-Japanese translations.
+
+4. Outcome: The model, with its newly tuned adapters, demonstrates improved translation accuracy between English and Japanese, achieving this with significantly less computational resource expenditure compared to full model fine-tuning.
+**Related Works:** More information can be seen in Houlsby et al. [2019] \cite{houlsby2019parameter}.
+
+### Prefix Tuning
+**Definition:** Prefix tuning is a technique used to improve the performance of language models. It involves adding a set of trainable continuous vectors called "prefixes" to each Transformer layer. These prefixes are specific to the task and can be considered virtual token embedding. A reparameterization trick is used to optimize the prefixes. This involves training a Multi-Layer Perceptron (MLP) function that maps a smaller matrix to the parameter matrix of prefixes instead of directly optimizing them. This trick is effective in ensuring stable training. Once the optimization is complete, the mapping function is discarded, and only the derived prefix vectors are kept to enhance task-specific performance. Since only the prefix parameters are trained, this can lead to a more efficient model optimization.
+
+**Case Study:** Improving Sentiment Analysis with Prefix Tuning
+
+1. Objective: To refine a pre-trained language model for more accurate sentiment analysis on product reviews.
+
+2. Process:
+
+\item Adding Prefixes: Trainable prefix vectors are added to each layer of the Transformer model. These prefixes act like virtual token embeddings tailored to the sentiment analysis task.
+\item Training Method: A Multi-Layer Perceptron (MLP) function is used to optimize these prefixes, mapping a smaller matrix to the parameter matrix of prefixes for stable training.
+
+3. Application: The model, with optimized prefixes, is deployed to analyze customer reviews on an e-commerce platform, categorizing them into positive, negative, or neutral sentiments.
+
+4. Outcome: Post prefix tuning, the model shows enhanced accuracy in detecting sentiments from text, efficiently identifying customer opinions with minimal additional computational resources.
+
+**Related Works:** More information can be seen in Li et al. [2021] \cite{li2021prefix}.
+
+### Prompt Tuning
+**Definition:** Different from prefix tuning, prompt tuning mainly focuses on incorporating trainable prompt vectors at the input layer. The input prompt is modified to direct the model to generate the desired outputs while keeping the model parameters unchanged. The input text is augmented by including a group of soft prompt tokens based on discrete prompting methods to achieve this. This prompt-augmented input is then used to solve specific downstream tasks. To implement this technique, task-specific prompt embedding is combined with the input text embedding fed into language models. P-tuning \cite{liu2023gpt} has proposed a free form to combine the context, prompt, and target tokens, which can be applied to the architectures for natural language understanding and generation.
+
+**Case Study:** Enhancing a Chatbot for Customer Service using Prompt Tuning
+
+1. Objective: To optimize a pre-trained language model for a specific task in customer service, such as handling common inquiries or complaints.
+
+2. Process:
+
+\item Input Modification: Incorporate a set of trainable soft prompt tokens into the input text. These prompts are designed to steer the model towards generating responses suitable for customer service scenarios.
+\item Prompt Embedding: Combine task-specific prompt embeddings with the input text embeddings before feeding them into the model.
+
+3. Application: The adjusted model is used in a customer service chatbot, which interacts with customers, addressing their queries and concerns more effectively and contextually.
+
+4. Outcome: After prompt tuning, the chatbot demonstrates improved performance in understanding and responding to customer service-related queries, providing more relevant and helpful responses without the need for extensive retraining of the entire model.
+
+**Related Works:** More information can be seen in Ester et al. [2021] \cite{ester2021power}.
+
+### Low-Rank Adaptation
+**Definition:** Low-Rank Adaptation (LoRA) is a technique used to mitigate the computational complexity associated with neural networks, especially when fine-tuning large language models on devices with limited resources. LoRA imposes a low-rank constraint to approximate the updated matrix at each dense layer, thereby reducing the trainable parameters for adapting to downstream tasks. The main advantage of LoRA is that it can significantly save memory and storage usage (e.g., VRAM). Additionally, it allows for keeping only a single large model copy while maintaining several task-specific low-rank decomposition matrices for adapting to different downstream tasks.
+
+**Case Study:** Implementing LoRA for a Multitask Language Model
+
+1. Objective: To adapt a large language model efficiently for multiple downstream tasks (like text classification, summarization, and translation) on a device with limited computational resources.
+
+2. Process:
+
+\item  Low-Rank Constraint: Apply LoRA by introducing low-rank matrices to approximate updates in the model's dense layers, significantly reducing the number of trainable parameters.
+\item Task-Specific Adaptation: Maintain a single copy of the large model while creating several low-rank decomposition matrices, each tailored to a specific task.
+
+
+3. Application: The adapted model is used in an environment where it needs to switch between different NLP tasks based on user input, such as a versatile chatbot or a multi-functional text processing tool.
+
+4. Outcome: With LoRA, the model efficiently handles multiple tasks without the need for separate model copies for each task, conserving memory and computational resources while maintaining high performance across various NLP tasks.
+
+**Related Works:** More information can be seen in Hu et al. [2021] \cite{hu2021lora}.
+
+## Prompt Engineering
+After pre-training or adaptation tuning, a major approach to using LLMs is to design suitable prompting strategies for solving various tasks and show their special abilities, i.e., emergent abilities. Prompt tuning involves creating effective prompts that guide the model to generate desired responses. This process, known as prompt engineering \cite{zheng2023judging}, requires a careful design of prompts to elicit accurate and relevant responses from the model. A well-designed prompt is essential in eliciting the abilities of language models to accomplish specific tasks. Typically, four key ingredients depict the functionality of a prompt for eliciting the abilities of language models to complete tasks. These include task description, input data, contextual information, and prompt style. In-context learning is a common prompting method that involves formulating the task description and/or demonstrations in natural language text. Additionally, chain-of-thought prompting can enhance in-context learning by involving a series of intermediate reasoning steps in prompts.
+
+### Emergent Abilities
+**Definition:** Emergent abilities \cite{wei2022emergent} are unique capabilities that are only present in large language models (LLMs) and not in smaller ones. This is one of the most prominent features differentiating LLMs from previous pre-trained language models (PLMs). When the scale reaches a certain level, emergent abilities occur as LLMs perform significantly above random. In principle, we are more concerned with emergent abilities that can be applied to solve various tasks. For instance, in-context learning, instruction following, and step-by-step reasoning are three abilities for LLMs and representative models that possess these abilities. We will introduce these abilities in the following sections.
+
+**Case Study:** See in In-context Learning and Step-by-step reasoning.
+**Related Works:** More information can be seen in Wei et al. [2022] \cite{wei2022emergent}.
+
+### Scaling Law
+**Definition:** In the field of statistics, a scaling law refers to a functional relationship between two quantities where a relative change in one quantity results in a proportional change in the other quantity, independent of their initial size. In the context of LLMs (Language Model Models), a neural scaling law is a type of scaling law that relates the parameters of a family of neural networks. A neural model can be characterized by four parameters: model size, training dataset size, training cost, and performance after training. Each of these four variables can be precisely defined as a real number, and they are empirically found to be related by simple statistical laws known as "scaling laws." These laws are usually expressed as N, D, C, and L, where N represents the number of parameters, D represents the dataset size, C represents the computing cost, and L represents the loss. For instance, KM scaling law \cite{kaplan2020scaling} and Chinchilla scaling law \cite{hoffmann2022training}.
+**Case Study:** Applying the Kaplan-Meier (KM) Scaling Law to Optimize an LLM
+
+1. Objective: To use the KM scaling law to determine the optimal balance between model size, dataset size, and computational cost for a language model designed for natural language understanding.
+
+2. Scaling Law - KM Scaling Law:
+\item Description: This law suggests that increasing the number of parameters (N) and the dataset size (D) leads to a decrease in the loss (L), but with diminishing returns.
+\item Application: Deciding on the model size and training dataset size to achieve a desired level of performance within a feasible computational budget.
+
+3. Process:
+\item Model Parameters (N): Select an initial number of parameters based on computational resources.
+\item Dataset Size (D): Choose a dataset size that complements the chosen model size, adhering to the scaling law.
+\item Training and Loss (L): Train the model and observe the loss, adjusting N and D as necessary to optimize performance.
+
+4. Outcome: By following the KM scaling law, the development team efficiently scales the model to a size where it achieves high performance in natural language understanding tasks, balancing the trade-off between computational cost and accuracy. This case demonstrates how scaling laws can guide the efficient and effective development of LLMs.
+
+**Related Works:** More information can be seen in Kaplan et al. [2020] \cite{kaplan2020scaling} and Hoffman et al. [2022]\cite{hoffmann2022training}.
+
+### In-context Learning
+**Definition:** The concept of in-context learning (ICL) was introduced by GPT-3. Essentially, ICL allows a language model to generate the expected output for test instances by completing the word sequence of input text without requiring additional training or gradient updates. This is particularly useful in scenarios where models must adapt to new information or tasks based on the context provided. The language model is provided with natural language instruction and/or several task demonstrations, which allows it to complete the word sequence of input text and generate the expected output for the test instances.
+
+**Case Study:** Using GPT-3 for Real-Time Language Translation via In-Context Learning
+
+1. Objective: To demonstrate GPT-3's in-context learning ability by using it for real-time translation between English and Spanish.
+
+2. In-Context Learning Process:
+\item Input: Provide GPT-3 with a set of example translations between English and Spanish within the prompt.
+\item Task Demonstration: Include a few examples of sentences in English followed by their Spanish translations.
+In-Context Learning: GPT-3 uses these examples to understand the task-translating English text into Spanish.
+
+3. Application: Implement GPT-3 in a translation tool where users input English sentences, and the model provides real-time Spanish translations.
+
+4. Outcome: Leveraging in-context learning, GPT-3 successfully translates new English sentences into Spanish accurately, demonstrating its ability to quickly adapt to the translation task with just a few contextual examples, without any specific training for translation.
+
+**Related Works:** More information can be seen in Brown et al. [2020] \cite{brown2020language}.
+
+### Context Window
+**Definition:** A context window is a specific range of words or tokens surrounding a particular word within a text, i.e., the length of the context that LLMs can utilize. It is used to understand the linguistic context of that word and analyze the relationships and dependencies between words. However, Transformer-based LMs have a limitation of a limited context length due to the quadratic computational costs in both time and memory. Despite this, there is a growing need for long context windows in applications such as PDF processing and story writing.
+
+**Case Study:** Enhancing Story Writing with Extended Context Window
+
+1. Objective: To improve a Transformer-based language model's ability to write coherent and consistent stories by extending its context window.
+
+2. Challenge:
+\item Limited Context Window: The standard Transformer model struggles with longer narratives due to its limited context window, potentially losing track of earlier plot points or character details.
+\item Need for Extension: Story writing requires keeping track of a long narrative, characters, and plot developments, necessitating a longer context window.
+
+3. Solution:
+\item Implementation: Employ techniques like memory-augmented neural networks or sparse attention mechanisms to extend the context window the model can consider.
+\item Application: The model is used to generate stories, where it now maintains coherence over longer narratives by referring back to events and characters introduced earlier in the text.
+
+4. Outcome: With an extended context window, the model produces more coherent and contextually consistent stories, successfully recalling and integrating earlier plot elements and character interactions throughout the narrative.
+
+**Related Works:** More information can be seen in Yuan et al. [2022] \cite{yuan2022wordcraft}.
+
+### Step-by-step reasoning
+**Definition:** Step-by-step reasoning refers to a methodical process of arriving at conclusions or solving problems by following a logical sequence of steps or stages. These sequences often involve breaking down a complex problem into smaller, more manageable parts, analyzing each part individually, and then synthesizing the insights to form a coherent solution. This process is grounded in logical, systematic progression from one point to the next based on rules, facts, or rational analysis. In this process, rules serve as guidelines or principles that direct the reasoning path, while rational analysis involves critically evaluating information, assumptions, and implications at each step. Step-by-step reasoning enhances clarity, reduces the likelihood of errors, and facilitates easier identification and correction of mistakes, making it a highly effective approach to systematic problem-solving. While highly effective, this method can be time-consuming and may not always be suitable for problems requiring creative or out-of-the-box thinking.
+
+**Case Study:** Using Step-by-Step Reasoning in AI for Medical Diagnosis
+
+1. Objective: To implement an AI system using step-by-step reasoning for accurate and systematic medical diagnosis.
+
+2. Process:
+\item Problem Decomposition: The AI system breaks down a patient's symptoms into individual factors (e.g., intensity, duration, related conditions).
+\item Sequential Analysis: Each factor is analyzed in a logical sequence, referencing medical rules and data.
+\item Synthesis of Insights: The system then synthesizes these insights to form a preliminary diagnosis, considering the interrelations of symptoms and medical guidelines.
+
+3. Application: The AI is used in a healthcare setting, assisting doctors by providing preliminary diagnoses based on patient-reported symptoms.
+
+4. Outcome: The AI system, through step-by-step reasoning, offers accurate, logically derived diagnoses, enhancing clarity and reducing errors. This systematic approach improves diagnostic efficiency but may be time-consuming compared to more heuristic methods.
+
+**Related Works:** More information can be seen in Wei et al. [2022] \cite{wei2022chain}.
+
+### Chain-of-thought Prompt
+**Definition:** Chain-of-thought prompt is a type of prompt or instruction that encourages a person or a machine to follow a sequential or logical progression of ideas (i.e. step-by-step reasoning), akin to how a chain links together. This concept can be seen in various areas, such as creative writing, brainstorming, problem-solving, and machine learning. The core idea behind a chain-of-thought prompt is to provide a structured pathway for exploring or generating ideas, whether in human thought processes or machine-generated outputs. This structured approach can lead to a more coherent, logical, and meaningful exploration or generation of ideas, solutions, or narratives. Typically, CoT can be used with ICL in two major settings: the few-shot \cite{li2022advance} and zero-shot settings \cite{kojima2022large}.
+
+**Case Study:** Using Chain-of-Thought Prompting in AI for Complex Math Problem Solving
+
+1. Objective: To enhance an AI model's capability to solve complex mathematical problems using chain-of-thought prompts.
+
+2. Process:
+\item CoT Prompt Design: Develop prompts that guide the AI to break down a complex math problem into smaller, sequential steps.
+\item Sequential Reasoning: The AI follows the prompt to tackle each part of the problem methodically, documenting its reasoning process at each step.
+\item Solution Synthesis: The AI synthesizes the insights from each step to arrive at the final answer.
+
+3. Application: Implement AI in an educational tool to assist students in understanding and solving complex math problems.
+
+4. Outcome: The AI, guided by CoT prompts, demonstrates an improved ability to methodically solve complex math problems, providing step-by-step explanations that enhance understanding and learning for students. This approach leads to more coherent and logically structured problem-solving compared to direct answer generation.
+
+**Related Works:** More information can be seen in Wei et al. [2022] \cite{wei2022chain}, Li et al. [2022] \cite{li2022advance}, and Kojima et al. [2022] \cite{kojima2022large}.
 
 ## Citations
 
