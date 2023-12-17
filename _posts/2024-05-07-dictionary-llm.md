@@ -155,7 +155,7 @@ This architecture is useful in handling sequences of varying lengths and is cruc
 **Related Work:** More information can be seen in Zhang et al.<d-cite key="zhang2022examining"></d-cite>.
 
 <div class="row mt-3">
-  {% include figure.html path="assets/img/2024-05-07-dictionary-llm/1.png" class="img-fluid" %}
+  {% include figure.html path="assets/img/2024-05-07-dictionary-llm/7.png" class="img-fluid" %}
 </div>
 <div class="caption">
     A comparison of the attention patterns in three mainstream architectures. Here, the yellow, green, blue, and grey rectangles indicate the encoder-encoder attention, encoder-decoder attention, decoder-decoder attention, and masked attention, respectively.
@@ -226,7 +226,7 @@ Supervised fine-tuning is a process that involves further training a pre-trained
   {% include figure.html path="assets/img/2024-05-07-dictionary-llm/RLHF.png" class="img-fluid" %}
 </div>
 <div class="caption">
-    <d-footnote>asads</d-footnote>Performing the RLHF algorithm involves three steps. Firstly, fine-tune a pre-trained LLM through supervised learning. Secondly, generate multiple responses for each query and rank them based on human preference. Finally, optimize the language model through RL by maximizing the feedback from the reward model.
+    <d-footnote>Figure from Ouyang et al. [2022].<d-cite key="ouyang2022training"></d-cite></d-footnote>Performing the RLHF algorithm involves three steps. Firstly, fine-tune a pre-trained LLM through supervised learning. Secondly, generate multiple responses for each query and rank them based on human preference. Finally, optimize the language model through RL by maximizing the feedback from the reward model.
 </div>
 
 ### Instruction Tuning
