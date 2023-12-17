@@ -226,7 +226,7 @@ Supervised fine-tuning is a process that involves further training a pre-trained
   {% include figure.html path="assets/img/2024-05-07-dictionary-llm/RLHF.png" class="img-fluid" %}
 </div>
 <div class="caption">
-    <d-footnote>Figure from Ouyang et al. [2022].<d-cite key="ouyang2022training"></d-cite></d-footnote>Performing the RLHF algorithm involves three steps. Firstly, fine-tune a pre-trained LLM through supervised learning. Secondly, generate multiple responses for each query and rank them based on human preference. Finally, optimize the language model through RL by maximizing the feedback from the reward model.
+    <d-footnote>Figure from Ouyang et al.<d-cite key="ouyang2022training"></d-cite></d-footnote>Performing the RLHF algorithm involves three steps. Firstly, fine-tune a pre-trained LLM through supervised learning. Secondly, generate multiple responses for each query and rank them based on human preference. Finally, optimize the language model through RL by maximizing the feedback from the reward model.
 </div>
 
 ### Instruction Tuning
@@ -295,7 +295,7 @@ Supervised fine-tuning is a process that involves further training a pre-trained
 
 4. Outcome: After prompt tuning, the chatbot demonstrates improved performance in understanding and responding to customer service-related queries, providing more relevant and helpful responses without the need for extensive retraining of the entire model.
 
-**Related Works:** More information can be seen in Ester et al.<d-cite key="lester2021power"></d-cite>.
+**Related Works:** More information can be seen in Lester et al.<d-cite key="lester2021power"></d-cite>.
 
 ### Low-Rank Adaptation
 **Definition:** Low-Rank Adaptation (LoRA) is a technique used to mitigate the computational complexity associated with neural networks, especially when fine-tuning large language models on devices with limited resources. LoRA imposes a low-rank constraint to approximate the updated matrix at each dense layer, thereby reducing the trainable parameters for adapting to downstream tasks. The main advantage of LoRA is that it can significantly save memory and storage usage (e.g., VRAM). Additionally, it allows for keeping only a single large model copy while maintaining several task-specific low-rank decomposition matrices for adapting to different downstream tasks.
@@ -325,7 +325,7 @@ Supervised fine-tuning is a process that involves further training a pre-trained
 After pre-training or adaptation tuning, a major approach to using LLMs is to design suitable prompting strategies for solving various tasks and show their special abilities, i.e., emergent abilities. Prompt tuning involves creating effective prompts that guide the model to generate desired responses. This process, known as prompt engineering <d-cite key="zheng2023judging"></d-cite>, requires a careful design of prompts to elicit accurate and relevant responses from the model. A well-designed prompt is essential in eliciting the abilities of language models to accomplish specific tasks. Typically, four key ingredients depict the functionality of a prompt for eliciting the abilities of language models to complete tasks. These include task description, input data, contextual information, and prompt style. In-context learning is a common prompting method that involves formulating the task description and/or demonstrations in natural language text. Additionally, chain-of-thought prompting can enhance in-context learning by involving a series of intermediate reasoning steps in prompts.
 
 ### Emergent Abilities
-**Definition:** Emergent abilities <d-cite key="wei2022emergent"></d-cite> are unique capabilities that are only present in large language models (LLMs) and not in smaller ones. This is one of the most prominent features differentiating LLMs from previous pre-trained language models (PLMs). When the scale reaches a certain level, emergent abilities occur as LLMs perform significantly above random. In principle, we are more concerned with emergent abilities that can be applied to solve various tasks. For instance, in-context learning, instruction following, and step-by-step reasoning are three abilities for LLMs and representative models that possess these abilities. We will introduce these abilities in the following sections.
+**Definition:** Emergent abilities are unique capabilities that are only present in large language models (LLMs) and not in smaller ones. This is one of the most prominent features differentiating LLMs from previous pre-trained language models (PLMs). When the scale reaches a certain level, emergent abilities occur as LLMs perform significantly above random. In principle, we are more concerned with emergent abilities that can be applied to solve various tasks. For instance, in-context learning, instruction following, and step-by-step reasoning are three abilities for LLMs and representative models that possess these abilities. We will introduce these abilities in the following sections.
 
 **Case Study:** See in In-context Learning and Step-by-step reasoning.
 
@@ -421,4 +421,4 @@ After pre-training or adaptation tuning, a major approach to using LLMs is to de
 
 4. Outcome: The AI, guided by CoT prompts, demonstrates an improved ability to methodically solve complex math problems, providing step-by-step explanations that enhance understanding and learning for students. This approach leads to more coherent and logically structured problem-solving compared to direct answer generation.
 
-**Related Works:** More information can be seen in Wei et al. [2022] <d-cite key="wei2022chain"></d-cite>, Li et al. [2022] <d-cite key="li2022advance"></d-cite>, and Kojima et al. [2022] <d-cite key="kojima2022large"></d-cite>.
+**Related Works:** More information can be seen in Wei et al.<d-cite key="wei2022chain"></d-cite>, Li et al.<d-cite key="li2022advance"></d-cite>, and Kojima et al.<d-cite key="kojima2022large"></d-cite>.
