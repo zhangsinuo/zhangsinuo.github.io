@@ -136,7 +136,7 @@ This architecture is useful in handling sequences of varying lengths and is cruc
 
 4. Outcome: GPT models, thanks to the causal-decoder architecture, can generate coherent and contextually relevant text that follows a logical temporal order, making them powerful tools for various language generation tasks.
 
-**textbf{Related Work:** More information can be seen in Brown et al.<d-cite key="brown2020language"></d-cite>.
+**Related Work:** More information can be seen in Brown et al.<d-cite key="brown2020language"></d-cite>.
 
 ### Prefix Decoder Architecture
 
