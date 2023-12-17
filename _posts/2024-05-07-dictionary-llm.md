@@ -155,7 +155,7 @@ This architecture is useful in handling sequences of varying lengths and is cruc
 **Related Work:** More information can be seen in Zhang et al.<d-cite key="zhang2022examining"></d-cite>.
 
 <div class="row mt-3">
-  {% include figure.html path="assets/img/2024-05-07-dictionary-llm/7.png" class="img-fluid" %}
+  {% include figure.html path="assets/img/2024-05-07-dictionary-llm/7.jpg" class="img-fluid" %}
 </div>
 <div class="caption">
     A comparison of the attention patterns in three mainstream architectures. Here, the yellow, green, blue, and grey rectangles indicate the encoder-encoder attention, encoder-decoder attention, decoder-decoder attention, and masked attention, respectively.
