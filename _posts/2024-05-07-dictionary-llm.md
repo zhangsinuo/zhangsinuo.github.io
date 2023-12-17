@@ -81,9 +81,6 @@ _styles: >
     font-size: 16px;
   }
 ---
-
-Note: please use the table of contents as defined in the front matter rather than the traditional markdown styling.
-
 ## Introduction
 <div class="row mt-3">
   {% include figure.html path="assets/img/2024-05-07-dictionary-llm/over.png" class="img-fluid" %}
