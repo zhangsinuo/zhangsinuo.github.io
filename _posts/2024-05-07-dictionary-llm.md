@@ -199,11 +199,30 @@ Supervised fine-tuning is a process that involves further training a pre-trained
    - Fine-Tuning Dataset: Utilize a dataset of medical conversations and diagnoses, accurately labeled by medical professionals.
    - Training: The model is fine-tuned with this medical dataset, learning to adjust its responses to fit the medical context accurately.
 
-4. Application: The fine-tuned model is employed in a medical chatbot, assisting doctors by providing preliminary diagnoses based on patient symptoms described in natural language.
+3. Application: The fine-tuned model is employed in a medical chatbot, assisting doctors by providing preliminary diagnoses based on patient symptoms described in natural language.
 
-5. Outcome: Post fine-tuning, the model shows significantly improved accuracy in understanding and responding to medical queries, making it a valuable tool for healthcare professionals.
+4. Outcome: Post fine-tuning, the model shows significantly improved accuracy in understanding and responding to medical queries, making it a valuable tool for healthcare professionals.
 
 **Related Works:** More information can be seen in Ouyang et al. [2022] \cite{ouyang2022training}.
+
+### Reinforcement Learning from Human Feedback
+**Definition:** RLHF, short for Reinforcement Learning from Human Feedback, is a training method that uses human feedback to train machine learning models. Unlike traditional reinforcement learning methods that rely solely on reward signals, RLHF incorporates human evaluations into the learning process to align the models with human values and preferences. This approach can be particularly useful in training language models to generate human-like text and understand natural language. By refining the model's responses based on human feedback, RLHF can improve its performance and align it with human values. RLAIF, short for Reinforcement Learning from AI feedback \cite{bai2022constitutional} is an improvement over RLHF, as it merges traditional reinforcement learning methodologies with feedback generated from other AI models, usually an aligned LLM, instead of relying solely on human feedback. This evolved learning approach has shown promising results and opens up new avenues for research in the field.
+
+**Case Study:** Training a Customer Service Chatbot using RLHF
+
+1. Objective: To train a chatbot for effective and empathetic customer service interactions.
+
+2. Process:
+   - Initial Model: Begin with a pre-trained language model capable of basic conversational responses.
+   - Human Feedback: Introduce human feedback by having language experts review and rate the chatbot's responses in simulated customer service scenarios.
+   - Training Loop: Use the feedback to adjust the model's parameters, encouraging it to generate responses that align more closely with the desired quality of customer service communication.
+
+4. Application: Deploy the chatbot in a real-world customer service environment, handling inquiries and providing assistance.
+
+5. Outcome: The chatbot, trained with RLHF, shows improved ability to handle customer queries with appropriate, empathetic, and effective responses, leading to higher customer satisfaction.
+
+**Related Works:** More information can be seen in Christiano et al. [2017] \cite{christiano2017deep}.
+
 ## Citations
 
 Citations are then used in the article body with the `<d-cite>` tag.
