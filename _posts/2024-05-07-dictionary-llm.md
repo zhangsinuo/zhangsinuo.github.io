@@ -36,11 +36,29 @@ bibliography: 2024-05-07-dictionary-llm.bib
 toc:
   - name: Introduction
   - name: Pre-training Technologies
-  - name: ooo
     subsections:
-    - name: Interactive Figures
+    - name: Encoder-Decoder Architecture
+    - name: Causal Decoder Architecture
+    - name: Prefix Decoder Architecture
+
   - name: Fine-tuning Methods
-  - name: Utilization Abilities
+    subsections:
+    - name: Supervised Fine-tuning
+    - name: Reinforcement Learning From Human Feedback
+    - name: Instruction Tuning
+    - name: Alignment
+    - name: Adapter Tuning
+    - name: Prefix Tuning
+    - name: Prompt Tuning
+    - name: Low-Rank Adaptation
+  - name: Prompt Engineering
+    subsections:
+    - name: Emergent Abilities
+    - name: Scaling Law
+    - name: In-context Learning
+    - name: Context Window
+    - name: Step-by-step reasoning
+    - name: Chain-of-thought Prompt
   - name: References
   - name: Other Typography?
 
