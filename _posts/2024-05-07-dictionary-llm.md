@@ -226,7 +226,7 @@ Supervised fine-tuning is a process that involves further training a pre-trained
   {% include figure.html path="assets/img/2024-05-07-dictionary-llm/RLHF.png" class="img-fluid" %}
 </div>
 <div class="caption">
-    <d-footnote>asads</d-footnote>d-footnote>Performing the RLHF algorithm involves three steps. Firstly, fine-tune a pre-trained LLM through supervised learning. Secondly, generate multiple responses for each query and rank them based on human preference. Finally, optimize the language model through RL by maximizing the feedback from the reward model.
+    <d-footnote>asads</d-footnote>Performing the RLHF algorithm involves three steps. Firstly, fine-tune a pre-trained LLM through supervised learning. Secondly, generate multiple responses for each query and rank them based on human preference. Finally, optimize the language model through RL by maximizing the feedback from the reward model.
 </div>
 
 ### Instruction Tuning
