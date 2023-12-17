@@ -60,7 +60,7 @@ toc:
     - name: Step-by-step reasoning
     - name: Chain-of-thought Prompt
   - name: References
-  - name: Other Typography?
+
 
 # Below is an example of injecting additional post-specific styles.
 # This is used in the 'Layouts' section of this post.
