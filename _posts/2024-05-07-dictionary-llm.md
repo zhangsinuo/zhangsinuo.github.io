@@ -295,7 +295,7 @@ Supervised fine-tuning is a process that involves further training a pre-trained
 
 4. Outcome: After prompt tuning, the chatbot demonstrates improved performance in understanding and responding to customer service-related queries, providing more relevant and helpful responses without the need for extensive retraining of the entire model.
 
-**Related Works:** More information can be seen in Ester et al.<d-cite key="ester2021power"></d-cite>.
+**Related Works:** More information can be seen in Ester et al.<d-cite key="lester2021power"></d-cite>.
 
 ### Low-Rank Adaptation
 **Definition:** Low-Rank Adaptation (LoRA) is a technique used to mitigate the computational complexity associated with neural networks, especially when fine-tuning large language models on devices with limited resources. LoRA imposes a low-rank constraint to approximate the updated matrix at each dense layer, thereby reducing the trainable parameters for adapting to downstream tasks. The main advantage of LoRA is that it can significantly save memory and storage usage (e.g., VRAM). Additionally, it allows for keeping only a single large model copy while maintaining several task-specific low-rank decomposition matrices for adapting to different downstream tasks.
