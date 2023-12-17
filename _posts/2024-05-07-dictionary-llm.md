@@ -217,9 +217,9 @@ Supervised fine-tuning is a process that involves further training a pre-trained
  - Human Feedback: Introduce human feedback by having language experts review and rate the chatbot's responses in simulated customer service scenarios.
  - Training Loop: Use the feedback to adjust the model's parameters, encouraging it to generate responses that align more closely with the desired quality of customer service communication.
 
-4. Application: Deploy the chatbot in a real-world customer service environment, handling inquiries and providing assistance.
+3. Application: Deploy the chatbot in a real-world customer service environment, handling inquiries and providing assistance.
 
-5. Outcome: The chatbot, trained with RLHF, shows improved ability to handle customer queries with appropriate, empathetic, and effective responses, leading to higher customer satisfaction.
+4. Outcome: The chatbot, trained with RLHF, shows improved ability to handle customer queries with appropriate, empathetic, and effective responses, leading to higher customer satisfaction.
 
 **Related Works:** More information can be seen in Christiano et al. [2017] \cite{christiano2017deep}.
 
@@ -234,9 +234,9 @@ Supervised fine-tuning is a process that involves further training a pre-trained
  - Collection of Instructions: Gather a diverse set of instruction-formatted instances in various languages, covering different tasks such as translation, summarization, and question-answering.
  - Fine-Tuning: Use these instances to fine-tune the LLM in a supervised manner, employing a sequence-to-sequence loss function to guide the learning process.
 
-4. Application: The fine-tuned model is employed in a multilingual virtual assistant capable of understanding and executing a wide range of user instructions in different languages.
+3. Application: The fine-tuned model is employed in a multilingual virtual assistant capable of understanding and executing a wide range of user instructions in different languages.
 
-5. Outcome: Post instruction tuning, the LLM shows enhanced performance in accurately interpreting and executing diverse tasks in multiple languages, demonstrating improved generalization abilities.
+4. Outcome: Post instruction tuning, the LLM shows enhanced performance in accurately interpreting and executing diverse tasks in multiple languages, demonstrating improved generalization abilities.
 
 **Related Works:** More information can be seen in Lou et al. [2023] \cite{lou2023prompt}.
 
@@ -247,10 +247,9 @@ Supervised fine-tuning is a process that involves further training a pre-trained
 
 1. Objective: To adapt a pre-trained Transformer-based language model for a specific language pair translation task, say English to Japanese.
 
-2. Process: 
-
-\item Adapter Integration: Small adapter modules are inserted into each Transformer layer of the pre-trained model. These adapters have a bottleneck architecture, compressing and then expanding the feature vectors.
-\item Training: Only the adapter modules are trained on a dataset of English-Japanese sentence pairs. The rest of the model's parameters remain frozen.
+2. Process:
+   - Adapter Integration: Small adapter modules are inserted into each Transformer layer of the pre-trained model. These adapters have a bottleneck architecture, compressing and then expanding the feature vectors.
+   - Training: Only the adapter modules are trained on a dataset of English-Japanese sentence pairs. The rest of the model's parameters remain frozen.
 
 3. Application: The adapted model is used in a translation service to provide accurate and contextually relevant English-to-Japanese translations.
 
@@ -265,9 +264,8 @@ Supervised fine-tuning is a process that involves further training a pre-trained
 1. Objective: To refine a pre-trained language model for more accurate sentiment analysis on product reviews.
 
 2. Process:
-
-\item Adding Prefixes: Trainable prefix vectors are added to each layer of the Transformer model. These prefixes act like virtual token embeddings tailored to the sentiment analysis task.
-\item Training Method: A Multi-Layer Perceptron (MLP) function is used to optimize these prefixes, mapping a smaller matrix to the parameter matrix of prefixes for stable training.
+   - Adding Prefixes: Trainable prefix vectors are added to each layer of the Transformer model. These prefixes act like virtual token embeddings tailored to the sentiment analysis task.
+   - Training Method: A Multi-Layer Perceptron (MLP) function is used to optimize these prefixes, mapping a smaller matrix to the parameter matrix of prefixes for stable training.
 
 3. Application: The model, with optimized prefixes, is deployed to analyze customer reviews on an e-commerce platform, categorizing them into positive, negative, or neutral sentiments.
 
@@ -283,9 +281,8 @@ Supervised fine-tuning is a process that involves further training a pre-trained
 1. Objective: To optimize a pre-trained language model for a specific task in customer service, such as handling common inquiries or complaints.
 
 2. Process:
-
-\item Input Modification: Incorporate a set of trainable soft prompt tokens into the input text. These prompts are designed to steer the model towards generating responses suitable for customer service scenarios.
-\item Prompt Embedding: Combine task-specific prompt embeddings with the input text embeddings before feeding them into the model.
+   - Input Modification: Incorporate a set of trainable soft prompt tokens into the input text. These prompts are designed to steer the model towards generating responses suitable for customer service scenarios.
+   - Prompt Embedding: Combine task-specific prompt embeddings with the input text embeddings before feeding them into the model.
 
 3. Application: The adjusted model is used in a customer service chatbot, which interacts with customers, addressing their queries and concerns more effectively and contextually.
 
@@ -301,9 +298,8 @@ Supervised fine-tuning is a process that involves further training a pre-trained
 1. Objective: To adapt a large language model efficiently for multiple downstream tasks (like text classification, summarization, and translation) on a device with limited computational resources.
 
 2. Process:
-
-\item  Low-Rank Constraint: Apply LoRA by introducing low-rank matrices to approximate updates in the model's dense layers, significantly reducing the number of trainable parameters.
-\item Task-Specific Adaptation: Maintain a single copy of the large model while creating several low-rank decomposition matrices, each tailored to a specific task.
+   - Low-Rank Constraint: Apply LoRA by introducing low-rank matrices to approximate updates in the model's dense layers, significantly reducing the number of trainable parameters.
+   - Task-Specific Adaptation: Maintain a single copy of the large model while creating several low-rank decomposition matrices, each tailored to a specific task.
 
 
 3. Application: The adapted model is used in an environment where it needs to switch between different NLP tasks based on user input, such as a versatile chatbot or a multi-functional text processing tool.
@@ -328,13 +324,13 @@ After pre-training or adaptation tuning, a major approach to using LLMs is to de
 1. Objective: To use the KM scaling law to determine the optimal balance between model size, dataset size, and computational cost for a language model designed for natural language understanding.
 
 2. Scaling Law - KM Scaling Law:
-\item Description: This law suggests that increasing the number of parameters (N) and the dataset size (D) leads to a decrease in the loss (L), but with diminishing returns.
-\item Application: Deciding on the model size and training dataset size to achieve a desired level of performance within a feasible computational budget.
+   - Description: This law suggests that increasing the number of parameters (N) and the dataset size (D) leads to a decrease in the loss (L), but with diminishing returns.
+   - Application: Deciding on the model size and training dataset size to achieve a desired level of performance within a feasible computational budget.
 
 3. Process:
-\item Model Parameters (N): Select an initial number of parameters based on computational resources.
-\item Dataset Size (D): Choose a dataset size that complements the chosen model size, adhering to the scaling law.
-\item Training and Loss (L): Train the model and observe the loss, adjusting N and D as necessary to optimize performance.
+   - Model Parameters (N): Select an initial number of parameters based on computational resources.
+   - Dataset Size (D): Choose a dataset size that complements the chosen model size, adhering to the scaling law.
+   - Training and Loss (L): Train the model and observe the loss, adjusting N and D as necessary to optimize performance.
 
 4. Outcome: By following the KM scaling law, the development team efficiently scales the model to a size where it achieves high performance in natural language understanding tasks, balancing the trade-off between computational cost and accuracy. This case demonstrates how scaling laws can guide the efficient and effective development of LLMs.
 
@@ -348,9 +344,8 @@ After pre-training or adaptation tuning, a major approach to using LLMs is to de
 1. Objective: To demonstrate GPT-3's in-context learning ability by using it for real-time translation between English and Spanish.
 
 2. In-Context Learning Process:
-\item Input: Provide GPT-3 with a set of example translations between English and Spanish within the prompt.
-\item Task Demonstration: Include a few examples of sentences in English followed by their Spanish translations.
-In-Context Learning: GPT-3 uses these examples to understand the task-translating English text into Spanish.
+   - Input: Provide GPT-3 with a set of example translations between English and Spanish within the prompt.
+   - Task Demonstration: Include a few examples of sentences in English followed by their Spanish translations.In-Context Learning: GPT-3 uses these examples to understand the task-translating English text into Spanish.
 
 3. Application: Implement GPT-3 in a translation tool where users input English sentences, and the model provides real-time Spanish translations.
 
@@ -366,12 +361,12 @@ In-Context Learning: GPT-3 uses these examples to understand the task-translatin
 1. Objective: To improve a Transformer-based language model's ability to write coherent and consistent stories by extending its context window.
 
 2. Challenge:
-\item Limited Context Window: The standard Transformer model struggles with longer narratives due to its limited context window, potentially losing track of earlier plot points or character details.
-\item Need for Extension: Story writing requires keeping track of a long narrative, characters, and plot developments, necessitating a longer context window.
+   - Limited Context Window: The standard Transformer model struggles with longer narratives due to its limited context window, potentially losing track of earlier plot points or character details.
+   - Need for Extension: Story writing requires keeping track of a long narrative, characters, and plot developments, necessitating a longer context window.
 
 3. Solution:
-\item Implementation: Employ techniques like memory-augmented neural networks or sparse attention mechanisms to extend the context window the model can consider.
-\item Application: The model is used to generate stories, where it now maintains coherence over longer narratives by referring back to events and characters introduced earlier in the text.
+   - Implementation: Employ techniques like memory-augmented neural networks or sparse attention mechanisms to extend the context window the model can consider.
+   - Application: The model is used to generate stories, where it now maintains coherence over longer narratives by referring back to events and characters introduced earlier in the text.
 
 4. Outcome: With an extended context window, the model produces more coherent and contextually consistent stories, successfully recalling and integrating earlier plot elements and character interactions throughout the narrative.
 
@@ -385,9 +380,9 @@ In-Context Learning: GPT-3 uses these examples to understand the task-translatin
 1. Objective: To implement an AI system using step-by-step reasoning for accurate and systematic medical diagnosis.
 
 2. Process:
-\item Problem Decomposition: The AI system breaks down a patient's symptoms into individual factors (e.g., intensity, duration, related conditions).
-\item Sequential Analysis: Each factor is analyzed in a logical sequence, referencing medical rules and data.
-\item Synthesis of Insights: The system then synthesizes these insights to form a preliminary diagnosis, considering the interrelations of symptoms and medical guidelines.
+   - Problem Decomposition: The AI system breaks down a patient's symptoms into individual factors (e.g., intensity, duration, related conditions).
+   - Sequential Analysis: Each factor is analyzed in a logical sequence, referencing medical rules and data.
+   - Synthesis of Insights: The system then synthesizes these insights to form a preliminary diagnosis, considering the interrelations of symptoms and medical guidelines.
 
 3. Application: The AI is used in a healthcare setting, assisting doctors by providing preliminary diagnoses based on patient-reported symptoms.
 
@@ -403,9 +398,9 @@ In-Context Learning: GPT-3 uses these examples to understand the task-translatin
 1. Objective: To enhance an AI model's capability to solve complex mathematical problems using chain-of-thought prompts.
 
 2. Process:
-\item CoT Prompt Design: Develop prompts that guide the AI to break down a complex math problem into smaller, sequential steps.
-\item Sequential Reasoning: The AI follows the prompt to tackle each part of the problem methodically, documenting its reasoning process at each step.
-\item Solution Synthesis: The AI synthesizes the insights from each step to arrive at the final answer.
+   - CoT Prompt Design: Develop prompts that guide the AI to break down a complex math problem into smaller, sequential steps.
+   - Sequential Reasoning: The AI follows the prompt to tackle each part of the problem methodically, documenting its reasoning process at each step.
+   - Solution Synthesis: The AI synthesizes the insights from each step to arrive at the final answer.
 
 3. Application: Implement AI in an educational tool to assist students in understanding and solving complex math problems.
 
