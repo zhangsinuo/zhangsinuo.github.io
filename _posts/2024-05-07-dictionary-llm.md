@@ -228,6 +228,13 @@ Supervised fine-tuning is a process that involves further training a pre-trained
 
 **Related Works:** More information can be seen in Christiano et al. [2017] \cite{christiano2017deep}.
 
+<div class="row mt-3">
+  {% include figure.html path="assets/img/2024-05-07-dictionary-llm/RLHF.png" class="img-fluid" %}
+</div>
+<div class="caption">
+    Performing the RLHF algorithm involves three steps. Firstly, fine-tune a pre-trained LLM through supervised learning. Secondly, generate multiple responses for each query and rank them based on human preference. Finally, optimize the language model through RL by maximizing the feedback from the reward model.
+</div>
+
 ### Instruction Tuning
 **Defnition:** Instruction tuning is an approach to fine-tune pre-trained LLMs using a collection of formatted instances (called instruction) in natural language. It is similar to supervised fine-tuning and multi-task prompted training. To perform instruction tuning, we must first collect or create instruction-formatted instances. These instances are then used to fine-tune LLMs in a supervised learning manner, for example, by training with the sequence-to-sequence loss. After instruction tuning, LLMs can demonstrate superior abilities to generalize to unseen tasks, even in multilingual settings. Instruction tuning is extensively researched and is a common feature in existing language models such as InstructGPT and GPT-4.
 
@@ -312,6 +319,12 @@ Supervised fine-tuning is a process that involves further training a pre-trained
 4. Outcome: With LoRA, the model efficiently handles multiple tasks without the need for separate model copies for each task, conserving memory and computational resources while maintaining high performance across various NLP tasks.
 
 **Related Works:** More information can be seen in Hu et al. [2021] \cite{hu2021lora}.
+<div class="row mt-3">
+  {% include figure.html path="assets/img/2024-05-07-dictionary-llm/3.png" class="img-fluid" %}
+</div>
+<div class="caption">
+    An illustration of four different parameter-efficient fine-tuning methods.
+</div>
 
 ## Prompt Engineering
 After pre-training or adaptation tuning, a major approach to using LLMs is to design suitable prompting strategies for solving various tasks and show their special abilities, i.e., emergent abilities. Prompt tuning involves creating effective prompts that guide the model to generate desired responses. This process, known as prompt engineering \cite{zheng2023judging}, requires a careful design of prompts to elicit accurate and relevant responses from the model. A well-designed prompt is essential in eliciting the abilities of language models to accomplish specific tasks. Typically, four key ingredients depict the functionality of a prompt for eliciting the abilities of language models to complete tasks. These include task description, input data, contextual information, and prompt style. In-context learning is a common prompting method that involves formulating the task description and/or demonstrations in natural language text. Additionally, chain-of-thought prompting can enhance in-context learning by involving a series of intermediate reasoning steps in prompts.
