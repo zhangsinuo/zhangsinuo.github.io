@@ -172,14 +172,14 @@ This architecture is useful in handling sequences of varying lengths and is cruc
 
 2. Challenges and Costs:
 
-··* Data Curation: Extensive effort to curate a diverse and unbiased dataset representing a wide range of demographics.
-··* Algorithm Development: Creating complex algorithms capable of making fair, unbiased decisions and adhering to ethical norms.
-··* Ongoing Monitoring: Continuous evaluation to maintain alignment, involving regular updates and checks.
+* Data Curation: Extensive effort to curate a diverse and unbiased dataset representing a wide range of demographics.
+- Algorithm Development: Creating complex algorithms capable of making fair, unbiased decisions and adhering to ethical norms.
++ Ongoing Monitoring: Continuous evaluation to maintain alignment, involving regular updates and checks.
 
 3. Performance Trade-offs:
 
-··* Processing Time: Slower decision-making due to the complexity of ethical algorithms.
-··* Accuracy: Potentially lower accuracy in specific contexts to avoid ethical risks, like discriminating against certain groups.
+* Processing Time: Slower decision-making due to the complexity of ethical algorithms.
+- Accuracy: Potentially lower accuracy in specific contexts to avoid ethical risks, like discriminating against certain groups.
 
 4. Outcome: The AI recruitment tool successfully facilitates fair and diverse hiring practices. Despite slower processing and potential accuracy trade-offs, the tool gains trust and acceptance due to its ethical and fair decision-making process.
 
