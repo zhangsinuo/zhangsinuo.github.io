@@ -172,19 +172,41 @@ This architecture is useful in handling sequences of varying lengths and is cruc
 
 2. Challenges and Costs:
 
-* Data Curation: Extensive effort to curate a diverse and unbiased dataset representing a wide range of demographics.
-* Algorithm Development: Creating complex algorithms capable of making fair, unbiased decisions and adhering to ethical norms.
-* Ongoing Monitoring: Continuous evaluation to maintain alignment, involving regular updates and checks.
+··* Data Curation: Extensive effort to curate a diverse and unbiased dataset representing a wide range of demographics.
+··* Algorithm Development: Creating complex algorithms capable of making fair, unbiased decisions and adhering to ethical norms.
+··* Ongoing Monitoring: Continuous evaluation to maintain alignment, involving regular updates and checks.
 
 3. Performance Trade-offs:
 
-* Processing Time: Slower decision-making due to the complexity of ethical algorithms.
-* Accuracy: Potentially lower accuracy in specific contexts to avoid ethical risks, like discriminating against certain groups.
+··* Processing Time: Slower decision-making due to the complexity of ethical algorithms.
+··* Accuracy: Potentially lower accuracy in specific contexts to avoid ethical risks, like discriminating against certain groups.
 
 4. Outcome: The AI recruitment tool successfully facilitates fair and diverse hiring practices. Despite slower processing and potential accuracy trade-offs, the tool gains trust and acceptance due to its ethical and fair decision-making process.
 
 **Related Works:** More information can be seen in Christiano et al. [2017] \cite{christiano2017deep} and in Askell et al. [2021] \cite{askell2021general}.
 
+## Fine-tuning Methods
+Fine-tuning Large Language Models (LLMs) is customizing these models to perform better for specific tasks or within certain domains. Fine-tuning is a process where a pre-trained LLM is trained on a smaller dataset specific to the task or domain of interest. Unlike pre-training, which involves learning from a broad range of data, fine-tuning focuses on specific patterns, terminology, and nuances relevant to the task, making the model more adept in those particular areas. This helps slightly adjust the model's parameters to improve its performance on the given task. Fine-tuning is essential for tailoring general-purpose LLMs to specific industry needs, cultural contexts, or user groups, thus maximizing their practical utility and effectiveness. Those fine-tuning methods can mainly divided into four classes: Reinforcement learning from human feedback (RLHF), instruction tuning, parameter-efficient model adaption, and retrieval augment generation.
+
+### Supervised Fine-tuning
+**Definition:**
+Supervised fine-tuning is a process that involves further training a pre-trained model using a smaller and domain-specific dataset that has labeled examples. This process aims to guide the model to adjust its parameters based on the labeled examples and perform better on specific tasks like classification or regression. This process uses the model's general knowledge acquired during pre-training and sharpens its abilities to perform a specific task based on the labeled examples provided in the fine-tuning dataset. Supervised fine-tuning is a widespread practice that helps to adapt large pre-trained models to particular domains or tasks, improving their performance and making them more applicable to the problem. It is highly correlated with RLHF and is typically considered the first step in an RLHF procedure.
+
+**Case Study:** Fine-Tuning a Language Model for Medical Diagnosis Assistance
+
+1. Objective: To adapt a general language model for use in medical diagnosis, enabling it to understand and respond accurately to medical queries.
+
+2. Process:
+
+··* Pre-Trained Model: Start with a language model pre-trained on a vast corpus of general text.
+··* Fine-Tuning Dataset: Utilize a dataset of medical conversations and diagnoses, accurately labeled by medical professionals.
+··* Training: The model is fine-tuned with this medical dataset, learning to adjust its responses to fit the medical context accurately.
+
+3. Application: The fine-tuned model is employed in a medical chatbot, assisting doctors by providing preliminary diagnoses based on patient symptoms described in natural language.
+
+4. Outcome: Post fine-tuning, the model shows significantly improved accuracy in understanding and responding to medical queries, making it a valuable tool for healthcare professionals.
+
+**Related Works:** More information can be seen in Ouyang et al. [2022] \cite{ouyang2022training}.
 ## Citations
 
 Citations are then used in the article body with the `<d-cite>` tag.
@@ -218,7 +240,7 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 
 1. First ordered list item
 2. Another item
-⋅⋅* Unordered sub-list. 
+⋅⋅* Unordered sub-list.
 1. Actual numbers don't matter, just that it's a number
 ⋅⋅1. Ordered sub-list
 4. And another item.
