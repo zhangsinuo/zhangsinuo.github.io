@@ -82,28 +82,23 @@ _styles: >
   }
 ---
 ## Introduction
+
+A large language model (LLM) is a type of language model notable for its ability to achieve general-purpose language understanding and generation with billions of parameters that require significant computational resources and vast data for training. These artificial neural networks, mainly transformers, are pre-trained using self-supervised and semi-supervised learning techniques. The boom in the field of LLM has attracted many researchers and practitioners to devote themselves to related research. Notable examples include OpenAI's GPT models (e.g., GPT-3.5 and GPT-4, used in ChatGPT), Google's PaLM (used in Bard), and Meta's LLaMa, as well as BLOOM, Ernie 3.0 Titan, and Anthropic's Claude 2, thus promoting the advancement of technology in this field. 
+
+As technology advances rapidly, many technical terms have emerged, some of which may not be easily understood. For example, 'in-context learning' refers to the model's ability to understand and respond based on the provided context, while 'instruction tuning' involves refining the model to respond to specific instructions more effectively. This proliferation of terms can make it challenging for researchers and users of LLMs to stay abreast of the latest advancements, creating unfavorable conditions for developing LLM technology. Therefore, sorting out and summarizing these proprietary terms has become an urgent demand for the LLM technology research community. To address this issue, this blog has launched "Dictionary LLM", which aims to organize and explain the existing terminologies of LLMs and provides a convenient reference for related researchers so that they can quickly understand the basic concepts of LLMs and then deeply catch the technology related to large models. This blog and the 'Dictionary LLM' are particularly useful for researchers, practitioners, and anyone interested in the field of LLMs, offering a comprehensive resource for both newcomers and experienced professionals.
+
 <div class="row mt-3">
   {% include figure.html path="assets/img/2024-05-07-dictionary-llm/over.png" class="img-fluid" %}
 </div>
 <div class="caption">
     A summary of Dictionary of LLM.
 </div>
-A large language model (LLM) is a type of language model notable for its ability to achieve general-purpose language understanding and generation with billions of parameters that require significant computational resources and vast data for training. These artificial neural networks, mainly transformers, are pre-trained using self-supervised and semi-supervised learning techniques. The boom in the field of LLM has attracted many researchers and practitioners to devote themselves to related research. Notable examples include OpenAI's GPT models (e.g., GPT-3.5 and GPT-4, used in ChatGPT), Google's PaLM (used in Bard), and Meta's LLaMa, as well as BLOOM, Ernie 3.0 Titan, and Anthropic's Claude 2, thus promoting the advancement of technology in this field. 
-
-As technology advances rapidly, many technical terms have emerged, some of which may not be easily understood. For example, 'in-context learning' refers to the model's ability to understand and respond based on the provided context, while 'instruction tuning' involves refining the model to respond to specific instructions more effectively. This proliferation of terms can make it challenging for researchers and users of LLMs to stay abreast of the latest advancements, creating unfavorable conditions for developing LLM technology. Therefore, sorting out and summarizing these proprietary terms has become an urgent demand for the LLM technology research community. To address this issue, this blog has launched "Dictionary LLM", which aims to organize and explain the existing terminologies of LLMs and provides a convenient reference for related researchers so that they can quickly understand the basic concepts of LLMs and then deeply catch the technology related to large models. This blog and the 'Dictionary LLM' are particularly useful for researchers, practitioners, and anyone interested in the field of LLMs, offering a comprehensive resource for both newcomers and experienced professionals.
 
 In the following parts, Section 2 will explore pre-training technologies, detailing the training datasets used, the architectural nuances of various models, and the principles of model alignment with human values and expectations. Section 3 will delve into the nuances of fine-tuning methods, focusing on the art and science of prompt engineering and its impact on model performance. Finally, Section 4 will discuss the varied applications and challenges in LLM research, addressing critical issues like model-generated hallucinations and their implications.
 
 ## Pre-training Technologies
 
 Pre-training is the first stage in the training process of machine learning models. It involves training the model on a large dataset to learn general features or representations of the data. These general features often include linguistic structures, syntax, common phrases, and contextual relationships, which form the foundational understanding of the model. Once pre-training is complete, fine-tuning follows, where the model is further trained on a smaller, task-specific dataset to specialize it for particular tasks. The pre-training phase helps the model leverage knowledge from a vast amount of data, making it more proficient in handling specific tasks with less data during the fine-tuning phase. This large dataset usually comprises diverse text sources, ranging from books and articles to websites, encompassing a wide array of topics and styles. This approach is commonly used in training large language models and deep learning models. Here, we briefly introduce three typical pre-training architectures for LLMs and an important technology, alignment.
-
-<div class="row mt-3">
-  {% include figure.html path="assets/img/2024-05-07-dictionary-llm/1.png" class="img-fluid" %}
-</div>
-<div class="caption">
-    A comparison of the attention patterns in three mainstream architectures. Here, the yellow, green, blue, and grey rectangles indicate the encoder-encoder attention, encoder-decoder attention, decoder-decoder attention, and masked attention, respectively.
-</div>
 
 ### Encoder-Decoder Architecture
 
@@ -163,6 +158,13 @@ This architecture is useful in handling sequences of varying lengths and is cruc
 4. Outcome: Models using the Prefix Decoder architecture effectively leverage both bidirectional and unidirectional attention mechanisms, making them versatile for a range of language understanding and generation tasks. They combine aspects of encoder-decoder architectures with the autoregressive generation capabilities of causal decoders.
 
 **Related Work:** More information can be seen in Zhang et al. [2022] \cite{zhang2022examining}.
+
+<div class="row mt-3">
+  {% include figure.html path="assets/img/2024-05-07-dictionary-llm/1.png" class="img-fluid" %}
+</div>
+<div class="caption">
+    A comparison of the attention patterns in three mainstream architectures. Here, the yellow, green, blue, and grey rectangles indicate the encoder-encoder attention, encoder-decoder attention, decoder-decoder attention, and masked attention, respectively.
+</div>
 
 ### Alignment
 
@@ -263,6 +265,7 @@ Supervised fine-tuning is a process that involves further training a pre-trained
 3. Application: The adapted model is used in a translation service to provide accurate and contextually relevant English-to-Japanese translations.
 
 4. Outcome: The model, with its newly tuned adapters, demonstrates improved translation accuracy between English and Japanese, achieving this with significantly less computational resource expenditure compared to full model fine-tuning.
+
 **Related Works:** More information can be seen in Houlsby et al. [2019] \cite{houlsby2019parameter}.
 
 ### Prefix Tuning
@@ -330,10 +333,12 @@ After pre-training or adaptation tuning, a major approach to using LLMs is to de
 **Definition:** Emergent abilities \cite{wei2022emergent} are unique capabilities that are only present in large language models (LLMs) and not in smaller ones. This is one of the most prominent features differentiating LLMs from previous pre-trained language models (PLMs). When the scale reaches a certain level, emergent abilities occur as LLMs perform significantly above random. In principle, we are more concerned with emergent abilities that can be applied to solve various tasks. For instance, in-context learning, instruction following, and step-by-step reasoning are three abilities for LLMs and representative models that possess these abilities. We will introduce these abilities in the following sections.
 
 **Case Study:** See in In-context Learning and Step-by-step reasoning.
+
 **Related Works:** More information can be seen in Wei et al. [2022] \cite{wei2022emergent}.
 
 ### Scaling Law
 **Definition:** In the field of statistics, a scaling law refers to a functional relationship between two quantities where a relative change in one quantity results in a proportional change in the other quantity, independent of their initial size. In the context of LLMs (Language Model Models), a neural scaling law is a type of scaling law that relates the parameters of a family of neural networks. A neural model can be characterized by four parameters: model size, training dataset size, training cost, and performance after training. Each of these four variables can be precisely defined as a real number, and they are empirically found to be related by simple statistical laws known as "scaling laws." These laws are usually expressed as N, D, C, and L, where N represents the number of parameters, D represents the dataset size, C represents the computing cost, and L represents the loss. For instance, KM scaling law \cite{kaplan2020scaling} and Chinchilla scaling law \cite{hoffmann2022training}.
+
 **Case Study:** Applying the Kaplan-Meier (KM) Scaling Law to Optimize an LLM
 
 1. Objective: To use the KM scaling law to determine the optimal balance between model size, dataset size, and computational cost for a language model designed for natural language understanding.
